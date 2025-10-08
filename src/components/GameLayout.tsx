@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link, Outlet } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router'; // Outlet is only needed in the root route, not here
 import { MadeWithApplaa } from '@/components/made-with-applaa';
-import { cn } from '@/lib/utils';
+// import { cn } from '@/lib/utils'; // cn is not used in this component
 import { Heart, Trophy } from 'lucide-react';
 
 interface GameLayoutProps {

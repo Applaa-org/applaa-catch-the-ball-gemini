@@ -1,7 +1,7 @@
 import * as React from 'react';
 import GameLayout from '@/components/GameLayout';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+// import { cn } from '@/lib/utils'; // cn is not used in this component
 
 // Placeholder for game components and logic
 const Game = () => {
@@ -28,7 +28,7 @@ const Game = () => {
         {/* Game Area */}
         {!isGameOver ? (
           <div className="text-center text-white text-3xl font-bold">
-            Game will start here!
+            <p className="mb-4">Catch the falling balls to score points!</p> {/* One-line guide */}
             <Button onClick={startGame} className="mt-8 px-8 py-4 text-xl bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg">
               Start Game
             </Button>
