@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Link } from '@tanstack/react-router'; // Outlet is only needed in the root route, not here
+import { Link } from '@tanstack/react-router';
 import { MadeWithApplaa } from '@/components/made-with-applaa';
-// import { cn } from '@/lib/utils'; // cn is not used in this component
-import { Heart, Trophy } from 'lucide-react';
+import { Heart, Trophy, Star } from 'lucide-react'; // Added Star icon for level
 
 interface GameLayoutProps {
   score: number;
   lives: number;
+  level: number; // Added level prop
   children: React.ReactNode;
 }
 
-export const GameLayout: React.FC<GameLayoutProps> = ({ score, lives, children }) => {
+export const GameLayout: React.FC<GameLayoutProps> = ({ score, lives, level, children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-400 to-purple-600 text-white font-sans">
       {/* Header */}
@@ -25,13 +25,17 @@ export const GameLayout: React.FC<GameLayoutProps> = ({ score, lives, children }
             </span>
           </Link>
           <div className="flex items-center space-x-6 text-gray-800">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105">
               <Trophy className="h-5 w-5 text-yellow-500" />
               <span className="text-lg font-semibold">Score: {score}</span>
             </div>
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 transition-transform duration-200 hover:scale-105">
               <Heart className="h-5 w-5 text-red-500" />
               <span className="text-lg font-semibold">Lives: {lives}</span>
+            </div>
+            <div className="flex items-center space-x-1 transition-transform duration-200 hover:scale-105">
+              <Star className="h-5 w-5 text-blue-500" />
+              <span className="text-lg font-semibold">Level: {level}</span>
             </div>
           </div>
         </div>
